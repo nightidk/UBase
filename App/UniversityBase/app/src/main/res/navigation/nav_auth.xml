@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/Login">
+
+    <fragment
+        android:id="@+id/Login"
+        android:name="com.example.universitybase.Login"
+        tools:layout="@layout/login">
+
+        <action
+            android:id="@+id/to_registration"
+            app:destination="@id/Registration" />
+    </fragment>
+    <fragment
+        android:id="@+id/Registration"
+        android:name="com.example.universitybase.Registration"
+        tools:layout="@layout/registration">
+
+        <action
+            android:id="@+id/to_login"
+            app:destination="@id/Login" />
+    </fragment>
+
+</navigation>

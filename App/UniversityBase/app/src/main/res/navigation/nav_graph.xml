@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FragmentFaculties">
+
+    <fragment
+        android:id="@+id/FragmentFaculties"
+        android:name="com.example.universitybase.Faculties"
+        android:label="Факультеты"
+        tools:layout="@layout/fragment_faculties">
+
+        <action
+            android:id="@+id/action_FragmentFaculties_to_FragmentDepartments"
+            app:destination="@id/FragmentDepartments" />
+        <action
+            android:id="@+id/action_FragmentFaculties_to_FragmentSettings"
+            app:destination="@id/FragmentSettings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FragmentDepartments"
+        android:label="Кафедры"
+        android:name="com.example.universitybase.Departments"
+        tools:layout="@layout/fragment_departments" >
+        <action
+            android:id="@+id/action_FragmentDepartments_to_FragmentFaculties"
+            app:destination="@id/FragmentFaculties" />
+        <action
+            android:id="@+id/action_FragmentDepartments_to_FragmentStudentsList"
+            app:destination="@id/FragmentStudentsList" />
+        <action
+            android:id="@+id/action_FragmentDepartments_to_FragmentSettings"
+            app:destination="@id/FragmentSettings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FragmentStudentsList"
+        android:label="Студенты"
+        android:name="com.example.universitybase.StudentsList"
+        tools:layout="@layout/fragment_students_list">
+
+        <action
+            android:id="@+id/action_FragmentStudentsList_to_FragmentDepartments"
+            app:destination="@id/FragmentDepartments" />
+        <action
+            android:id="@+id/action_FragmentStudentsList_to_FragmentStudentInfo"
+            app:destination="@id/FragmentStudentInfo" />
+        <action
+            android:id="@+id/action_FragmentStudentsList_to_FragmentSettings"
+            app:destination="@id/FragmentSettings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FragmentStudentInfo"
+        android:label=""
+        android:name="com.example.universitybase.StudentInfo"
+        tools:layout="@layout/fragment_student_info">
+
+        <action
+            android:id="@+id/action_FragmentStudentInfo_to_FragmentStudentsList"
+            app:destination="@id/FragmentStudentsList" />
+        <action
+            android:id="@+id/action_FragmentStudentInfo_to_FragmentSettings"
+            app:destination="@id/FragmentSettings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FragmentSettings"
+        android:label="Настройки"
+        android:name="com.example.universitybase.Settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_FragmentSettings_to_FacultiesSettings"
+            app:destination="@id/FacultiesSettings" />
+        <action
+            android:id="@+id/action_FragmentSettings_to_DepartmentsSettings"
+            app:destination="@id/DepartmentsSettings" />
+        <action
+            android:id="@+id/action_FragmentSettings_to_StudentsSettings"
+            app:destination="@id/StudentsSettings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FacultiesSettings"
+        android:label="Настройки / Факультеты"
+        android:name="com.example.universitybase.FacultiesSettings"
+        tools:layout="@layout/fragment_faculties_settings" >
+        <action
+            android:id="@+id/action_FacultiesSettings_to_FragmentSettings"
+            app:destination="@id/FragmentSettings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/DepartmentsSettings"
+        android:label="Настройки / Кафедры"
+        android:name="com.example.universitybase.DepartmentsSettings"
+        tools:layout="@layout/fragment_departments_settings" >
+        <action
+            android:id="@+id/action_DepartmentsSettings_to_FragmentSettings"
+            app:destination="@id/FragmentSettings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/StudentsSettings"
+        android:label="Настройки / Студенты"
+        android:name="com.example.universitybase.StudentsSettings"
+        tools:layout="@layout/fragment_students_settings" >
+        <action
+            android:id="@+id/action_StudentsSettings_to_FragmentSettings"
+            app:destination="@id/FragmentSettings" />
+    </fragment>
+</navigation>
